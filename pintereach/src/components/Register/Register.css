@@ -1,0 +1,28 @@
+
+.register-user { /* main div around entire form */
+
+}
+
+.register-user-form { /* user form class */
+
+}
+
+.user-name-section { /* user name section, includes label and username input. */
+
+}
+
+.username-input { /* just the username without the label for username. */
+
+}
+
+.password-section { /* password section, includes label and password input */
+
+}
+
+.password-input { /* just the password input without the password label included. */
+
+}
+
+.register-button { /* register button class here while the .btn class is in the global App.css file. */
+
+}
