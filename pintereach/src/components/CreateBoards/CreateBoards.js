@@ -34,8 +34,14 @@ class CreateBoards extends Component {
   };
 
   render() {
-    const { filteredArticles } = this.state;
+    const { articles, filteredArticles } = this.state;
+
+    if (!articles) {
+      return <div>Loading...</div>;
+    }
+
     console.log('filter', filteredArticles);
+    console.log('articles', this.state.articles);
     return (
       <div>
         <button type="button" onClick={this.createBoard}>
