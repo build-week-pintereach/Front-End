@@ -18,12 +18,16 @@ class Register extends Component {
     });
   };
 
+  submitUser = e => {
+    e.preventDefault();
+  };
+
   render() {
     const { username, password } = this.state;
     return (
       <div className="register-user">
         <h2>Register User</h2>
-        <form className="register-user-form">
+        <form onSubmit={this.submitUser} className="register-user-form">
           <div className="username-section">
             <label htmlFor="username-field">User name: </label>
 
