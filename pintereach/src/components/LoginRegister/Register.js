@@ -30,6 +30,8 @@ class Register extends Component {
       )
       .then(response => {
         console.log(response);
+        const token = response.data.token;
+        localStorage.setItem('token', token);
       })
       .catch(error => {
         console.log(error);
@@ -38,6 +40,7 @@ class Register extends Component {
 
   render() {
     const { username, password } = this.state;
+
     return (
       <div className="register-user">
         <h2>Register User</h2>
