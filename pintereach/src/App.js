@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Entry loginUser={this.loginUser} />
+        <Entry />
       </div>
     );
   }
