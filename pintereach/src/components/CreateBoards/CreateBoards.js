@@ -3,24 +3,7 @@ import axios from 'axios';
 import Board from '../Board/Board';
 
 class CreateBoards extends Component {
-  state = {
-    articles: [],
-    filteredArticles: []
-  };
-
-  componentDidMount() {
-    axios
-      .get('https://build-week-pintereach.herokuapp.com/api/articles/')
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          articles: res.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  state = {};
 
   createBoard = () => {
     const { articles } = this.state;
