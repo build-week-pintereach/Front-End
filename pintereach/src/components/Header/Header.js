@@ -7,6 +7,7 @@ import Register from '../Register/Register';
 
 export default class Header extends Component {
   render() {
+    const { user } = this.props;
     return (
       <header className="header">
         <h1 className="header-logo">Pintereach</h1>
