@@ -12,19 +12,15 @@ export default function(props) {
   return (
     <section>
       <nav className="nav">
-        {/* <NavLink to="/login" className="font med right">
+        <NavLink to="/login" className="font med right">
           Login
-        </NavLink> */}
+        </NavLink>
         <NavLink to="/register" className="font med left">
           Register
         </NavLink>
       </nav>
 
-      {/* <Route
-        path="/login"
-        exact
-        render={props => <Login {...props} loginUser={props.loginUser} />}
-      /> */}
+      <Route path="/login" exact render={props => <Login {...props} />} />
       <Route
         path="/register"
         exact
