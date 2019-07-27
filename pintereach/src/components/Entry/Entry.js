@@ -7,7 +7,7 @@ export default function(props) {
   return (
     <div>
       <section>
-        <Nav />
+        <Nav loginUser={props.loginUser} />
       </section>
     </div>
   );
