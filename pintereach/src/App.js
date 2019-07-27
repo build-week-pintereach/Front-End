@@ -6,6 +6,7 @@ import Login from './components/Login/Login';
 import { Route } from 'react-router-dom';
 
 import './App.css';
+import Entry from './components/Entry/Entry';
 
 // import Register from './components/Register/Register';
 
@@ -31,7 +32,8 @@ class App extends Component {
     const { user } = this.state;
     return (
       <div className="App">
-        <Header user={user} />
+        <Header />
+        <Entry />
       </div>
     );
   }
