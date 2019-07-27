@@ -28,7 +28,7 @@ export default class Login extends Component {
     return (
       <section>
         <h2>User Login</h2>
-        <button type="button" onClick={UserLogin}>
+        <button type="button" onClick={this.UserLogin}>
           Login
         </button>
         <form onSubmit={this.loginUser}>
