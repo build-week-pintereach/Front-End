@@ -16,7 +16,7 @@ export default class Header extends Component {
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/register">Register</NavLink>
         </nav>
-
+        {/* create Route for '/' HOME into PrivatePath for user after logged in to use only. */}
         <Route
           path="/"
           exact
