@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import './LoginRegister.css';
 
 export default class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: '',
-      password: ''
-    };
-  }
+  state = {
+    username: '',
+    password: ''
+  };
 
   changeHandler = e => {
     e.preventDefault();
@@ -18,16 +15,23 @@ export default class Login extends Component {
     });
   };
 
-  submitUser = e => {
+  loginUser = e => {
     e.preventDefault();
+    const { username, password } = this.state;
   };
 
+  UserLogin = props => {
+    props.loginUser();
+  };
   render() {
     const { username, password } = this.state;
     return (
       <section>
         <h2>User Login</h2>
-        <form onSubmit={this.submitUser}>
+        <button type="button" onClick={UserLogin}>
+          Login
+        </button>
+        <form onSubmit={this.loginUser}>
           <div className="username-field">
             <label htmlFor="username-login-field">User name: </label>
             <input
