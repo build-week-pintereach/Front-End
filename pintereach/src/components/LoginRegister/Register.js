@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './LoginRegister.css';
 
 class Register extends Component {
@@ -20,6 +21,19 @@ class Register extends Component {
 
   submitUser = e => {
     e.preventDefault();
+    const { username, password } = this.state;
+    const payload = { username, password };
+    axios
+      .post(
+        'https://build-week-pintereach.herokuapp.com/api/auth/register',
+        payload
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   render() {
