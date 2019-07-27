@@ -28,9 +28,10 @@ class App extends Component {
   loginUser = user => {};
 
   render() {
+    const { user } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header user={user} />
       </div>
     );
   }
