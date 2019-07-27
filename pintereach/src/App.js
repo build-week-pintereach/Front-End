@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Entry from './components/Entry/Entry';
-
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -18,16 +18,30 @@ class App extends Component {
     };
   }
 
-  registerUser = user => {};
+  registerUser = user => {
+    axios.get('https://build-week-pintereach.herokuapp.com/api/auth/register');
+  };
 
-  loginUser = user => {};
+  loginUser = () => {
+    axios
+      .post('https://build-week-pintereach.herokuapp.com/api/auth/login', {
+        username: 'test1',
+        password: 'hello'
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   render() {
     // const { user } = this.state;
     return (
       <div className="App">
         <Header />
-        <Entry />
+        <Entry loginUser={this.loginUser} />
       </div>
     );
   }
