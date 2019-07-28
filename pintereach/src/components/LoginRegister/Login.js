@@ -31,7 +31,9 @@ export default class Login extends Component {
 
         <form onSubmit={this.loginUser}>
           <div className="username-field">
-            <label htmlFor="username-login-field">User name: </label>
+            <label htmlFor="username-login-field" className="username-label">
+              User name:{' '}
+            </label>
             <input
               type="text"
               id="username-login-field"
@@ -44,7 +46,9 @@ export default class Login extends Component {
           </div>
           <br />
           <div className="password-field">
-            <label htmlFor="password-login-field">Password: </label>
+            <label htmlFor="password-login-field" className="password-label">
+              Password:{' '}
+            </label>
             <input
               type="password"
               id="password-login-field"

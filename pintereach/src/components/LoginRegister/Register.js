@@ -46,7 +46,9 @@ class Register extends Component {
         <h2 className="heading">Register User</h2>
         <form onSubmit={this.submitUser} className="register-user-form">
           <div className="username-section">
-            <label htmlFor="username-field">User name: </label>
+            <label htmlFor="username-field" className="username-label">
+              User name:{' '}
+            </label>
 
             <input
               type="text"
@@ -63,7 +65,9 @@ class Register extends Component {
           <br />
 
           <div className="password">
-            <label htmlFor="password-field">Password: </label>
+            <label htmlFor="password-field" className="password-label">
+              Password:{' '}
+            </label>
             <input
               type="password"
               name="password"
