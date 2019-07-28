@@ -36,6 +36,7 @@ class Register extends Component {
       .catch(error => {
         console.log(error);
       });
+    this.setState({ username: '', password: '' });
   };
 
   render() {
@@ -58,7 +59,7 @@ class Register extends Component {
               value={username}
               onChange={this.changeHandler}
               placeholder="Enter a user name..."
-              required
+              // required
             />
           </div>
 
@@ -76,7 +77,7 @@ class Register extends Component {
               value={password}
               onChange={this.changeHandler}
               placeholder="Please enter a password..."
-              required
+              // required
             />
           </div>
           <br />
