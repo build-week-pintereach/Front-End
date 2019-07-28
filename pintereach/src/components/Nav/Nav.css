@@ -55,5 +55,11 @@
      color:#d11aff;
 }
 
+.input { /** inputs for Register && Login => both username && password inputs **/
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #fcd3ff; 
+}
+
 
 
