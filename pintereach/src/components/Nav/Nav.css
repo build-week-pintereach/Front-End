@@ -30,3 +30,14 @@
 .active {
     color: #d11aff;
 }
+
+.m-right { /** move login to the right ***/
+    margin-right: 1.5rem;
+}
+.m-left { /** move register to the left **/
+    margin-left: 1.5rem;
+}
+
+.m-top { /** move form slightly further down screen from Login && Register buttons. **/
+    margin-top: 2.75rem;
+}
