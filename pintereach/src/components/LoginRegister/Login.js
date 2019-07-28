@@ -20,9 +20,6 @@ export default class Login extends Component {
     const { username, password } = this.state;
   };
 
-  UserLogin = props => {
-    props.loginUser();
-  };
   render() {
     const { username, password } = this.state;
     return (
