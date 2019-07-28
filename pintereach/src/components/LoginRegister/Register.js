@@ -54,7 +54,7 @@ class Register extends Component {
             <input
               type="text"
               id="username-field"
-              className="username-input"
+              className="input"
               name="username"
               value={username}
               onChange={this.changeHandler}
@@ -73,7 +73,7 @@ class Register extends Component {
               type="password"
               name="password"
               id="password-field"
-              className="password-input"
+              className="input"
               value={password}
               onChange={this.changeHandler}
               placeholder="Please enter a password..."
