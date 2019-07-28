@@ -10,22 +10,23 @@ export default function(props) {
   // const { user } = props;
 
   return (
-    <section className="login-register">
-      <nav className="nav">
-        <NavLink to="/login" className="font med right">
-          Login
-        </NavLink>
-        <NavLink to="/register" className="font med left">
-          Register
-        </NavLink>
-      </nav>
-
+    <div>
+      <section className="login-register">
+        <nav className="nav">
+          <NavLink to="/login" className="font med color">
+            Login
+          </NavLink>
+          <NavLink to="/register" className="font med color">
+            Register
+          </NavLink>
+        </nav>
+      </section>
       <Route path="/login" exact render={props => <Login {...props} />} />
       <Route
         path="/register"
         exact
         render={props => <Register {...props} /*user={user}*/ />}
       />
-    </section>
+    </div>
   );
 }
