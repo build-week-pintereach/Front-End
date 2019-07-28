@@ -45,5 +45,15 @@
 .heading { /** controls the headings in the forms Login && Register **/
     font-size: 1.75rem;
     font-family: sans-serif;
-    padding-bottom: 0.75rem;  
+    padding-bottom: 0.75rem;
+    color:#d11aff;
+
 }
+
+.label { /** connects both Login && Register labels => both the username && password labels **/
+    margin-right: 10px;
+     color:#d11aff;
+}
+
+
+
