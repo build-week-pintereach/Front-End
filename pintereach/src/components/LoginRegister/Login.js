@@ -26,7 +26,7 @@ export default class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <section>
+      <section className="m-top user-login">
         <h2 className="heading">User Login</h2>
 
         <form onSubmit={this.loginUser}>

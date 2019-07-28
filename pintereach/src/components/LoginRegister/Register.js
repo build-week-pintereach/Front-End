@@ -42,7 +42,7 @@ class Register extends Component {
     const { username, password } = this.state;
 
     return (
-      <section className="register-user">
+      <section className="m-top register-user">
         <h2 className="heading">Register User</h2>
         <form onSubmit={this.submitUser} className="register-user-form">
           <div className="username-section">
