@@ -42,8 +42,8 @@ class Register extends Component {
     const { username, password } = this.state;
 
     return (
-      <div className="register-user">
-        <h2>Register User</h2>
+      <section className="register-user">
+        <h2 className="heading">Register User</h2>
         <form onSubmit={this.submitUser} className="register-user-form">
           <div className="username-section">
             <label htmlFor="username-field">User name: </label>
@@ -80,7 +80,7 @@ class Register extends Component {
             Register User
           </button>
         </form>
-      </div>
+      </section>
     );
   }
 }
