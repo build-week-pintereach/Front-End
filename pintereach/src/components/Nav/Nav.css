@@ -1,0 +1,17 @@
+.login-register {
+    display: flex;
+    justify-content: center;
+    margin-top: 4.5em;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+.font {
+    font-family: 'Sail', cursive;
+    font-size: 1.5em;
+    text-decoration: none;
+}
