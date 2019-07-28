@@ -10,7 +10,7 @@ export default function(props) {
   // const { user } = props;
 
   return (
-    <section>
+    <section className="login-register">
       <nav className="nav">
         <NavLink to="/login" className="font med right">
           Login
