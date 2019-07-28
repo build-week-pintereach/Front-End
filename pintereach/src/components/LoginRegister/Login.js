@@ -27,10 +27,8 @@ export default class Login extends Component {
     const { username, password } = this.state;
     return (
       <section>
-        <h2>User Login</h2>
-        <button type="button" onClick={this.UserLogin}>
-          Login
-        </button>
+        <h2 className="heading">User Login</h2>
+
         <form onSubmit={this.loginUser}>
           <div className="username-field">
             <label htmlFor="username-login-field">User name: </label>
