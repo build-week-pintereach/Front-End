@@ -61,5 +61,12 @@
     border-color: #fcd3ff; 
 }
 
+.btn { /** class for both Login & Register submit buttons **/
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fcd3ff;
+    color: #8d17a5;
+    font-size: 1.25rem;  
+}
 
 
