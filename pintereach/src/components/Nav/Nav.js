@@ -13,10 +13,10 @@ export default function(props) {
     <div>
       <section className="login-register">
         <nav className="nav">
-          <NavLink to="/login" className="font med color">
+          <NavLink to="/login" className="font med color m-right">
             Login
           </NavLink>
-          <NavLink to="/register" className="font med color">
+          <NavLink to="/register" className="font med color m-left">
             Register
           </NavLink>
         </nav>
