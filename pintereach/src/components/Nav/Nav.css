@@ -41,3 +41,9 @@
 .m-top { /** move form slightly further down screen from Login && Register buttons. **/
     margin-top: 2.75rem;
 }
+
+.heading { /** controls the headings in the forms Login && Register **/
+    font-size: 1.75rem;
+    font-family: sans-serif;
+    padding-bottom: 0.75rem;  
+}
