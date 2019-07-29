@@ -1,5 +1,6 @@
 import React from 'react';
 import './Nav.css';
+import styled from 'styled-components';
 import { Route, NavLink } from 'react-router-dom';
 
 import Login from '../LoginRegister/Login';
@@ -11,16 +12,16 @@ export default function(props) {
 
   return (
     <div>
-      <section className="login-register">
-        <nav className="nav">
-          <NavLink to="/login" className="font med color m-right">
+      <LoginRegister>
+        <Nav>
+          <LoginLink to="/login" className="font med color m-right">
             Login
-          </NavLink>
+          </LoginLink>
           <NavLink to="/register" className="font med color m-left">
             Register
           </NavLink>
-        </nav>
-      </section>
+        </Nav>
+      </LoginRegister>
       <Route path="/login" exact render={props => <Login {...props} />} />
       <Route
         path="/register"
@@ -30,3 +31,22 @@ export default function(props) {
     </div>
   );
 }
+
+const LoginRegister = styled.section`
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5em;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+`;
+
+const LoginLink = styled(NavLink)`
+  font-family: 'Sail', cursive;
+  text-decoration: none;
+  font-size: 2.5em;
+  margin-right: 1.5rem;
+`;
