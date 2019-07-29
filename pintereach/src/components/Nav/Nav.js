@@ -5,11 +5,8 @@ import { Route, NavLink } from 'react-router-dom';
 
 import Login from '../LoginRegister/Login';
 import Register from '../LoginRegister/Register';
-// import Entry from '../Entry/Entry';
 
 export default function(props) {
-  // const { user } = props;
-
   return (
     <div>
       <LoginRegister>
@@ -19,11 +16,7 @@ export default function(props) {
         </Nav>
       </LoginRegister>
       <Route path="/login" exact render={props => <Login {...props} />} />
-      <Route
-        path="/register"
-        exact
-        render={props => <Register {...props} /*user={user}*/ />}
-      />
+      <Route path="/register" exact render={props => <Register {...props} />} />
     </div>
   );
 }
@@ -45,6 +38,10 @@ const LoginLink = styled(NavLink)`
   text-decoration: none;
   font-size: 2.5em;
   margin-right: 1.5rem;
+  color: #d11aff;
+  :hover {
+    color: #8d17a5;
+  }
 `;
 
 const RegisterLink = styled(NavLink)`
@@ -52,4 +49,8 @@ const RegisterLink = styled(NavLink)`
   text-decoration: none;
   font-size: 2.5em;
   margin-left: 1.5rem;
+  color: #d11aff;
+  :hover {
+    color: #8d17a5;
+  }
 `;
