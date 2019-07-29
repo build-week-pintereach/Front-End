@@ -19,12 +19,21 @@ export default class Login extends Component {
   loginUser = e => {
     e.preventDefault();
     const { username, password } = this.state;
+    const token = localStorage.getItem('token');
     axios
       .post('https://build-week-pintereach.herokuapp.com/api/auth/login', {
         username,
-        password
+        password,
+        headers: {
+          Authorization: token
+        }
       })
-      .then(response => {});
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   render() {
