@@ -1,72 +1,45 @@
-.login-register {
+/* .login-register {
     display: flex;
     justify-content: center;
     margin-top: 4.5em;
-}
+} */
 
-.nav {
+/* .nav {
     display: flex;
     justify-content: space-around;
     width: 45%;
-}
+} */
 
-.font {
+
+/* .font {
     font-family: 'Sail', cursive;
-    text-decoration: none;
+    text-decoration: none; */
 }
 
-.med {
+/* .med {
      font-size: 2.5em;
-}
+} */
+
+/* .m-right { 
+    margin-right: 1.5rem;
+} */
+
+/* .m-left { 
+    margin-left: 1.5rem;
+} */
 
 .color {
     color:#d11aff;
 }
 
-.color:hover {
+/* .color:hover {
     color: #8d17a5;
-}
+} */
 
 .active {
     color: #d11aff;
 }
 
-.m-right { /** move login to the right ***/
-    margin-right: 1.5rem;
-}
-.m-left { /** move register to the left **/
-    margin-left: 1.5rem;
-}
 
-.m-top { /** move form slightly further down screen from Login && Register buttons. **/
-    margin-top: 2.75rem;
-}
-
-.heading { /** controls the headings in the forms Login && Register **/
-    font-size: 1.75rem;
-    font-family: sans-serif;
-    padding-bottom: 0.75rem;
-    color:#d11aff;
-
-}
-
-.label { /** connects both Login && Register labels => both the username && password labels **/
-    margin-right: 10px;
-     color:#d11aff;
-}
-
-.input { /** inputs for Register && Login => both username && password inputs **/
-    padding: 5px;
-    border-radius: 5px;
-    border-color: #fcd3ff; 
-}
-
-.btn { /** class for both Login & Register submit buttons **/
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #fcd3ff;
-    color: #8d17a5;
-    font-size: 1.25rem;  
-}
 
 
