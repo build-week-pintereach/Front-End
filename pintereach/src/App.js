@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header';
-import Entry from './components/Entry/Entry';
+import Nav from './components/Nav/Nav';
 // import axios from 'axios';
 import './App.css';
 
@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Entry />
+        <Nav />
       </div>
     );
   }
