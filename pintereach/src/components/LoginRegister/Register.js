@@ -32,6 +32,7 @@ class Register extends Component {
         console.log(response);
         const token = response.data.token;
         localStorage.setItem('token', token);
+        this.props.history.push('/login');
       })
       .catch(error => {
         console.log(error);
