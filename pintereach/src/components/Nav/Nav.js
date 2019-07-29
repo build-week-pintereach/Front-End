@@ -14,12 +14,8 @@ export default function(props) {
     <div>
       <LoginRegister>
         <Nav>
-          <LoginLink to="/login" className="font med color m-right">
-            Login
-          </LoginLink>
-          <NavLink to="/register" className="font med color m-left">
-            Register
-          </NavLink>
+          <LoginLink to="/login">Login</LoginLink>
+          <RegisterLink to="/register">Register</RegisterLink>
         </Nav>
       </LoginRegister>
       <Route path="/login" exact render={props => <Login {...props} />} />
@@ -49,4 +45,11 @@ const LoginLink = styled(NavLink)`
   text-decoration: none;
   font-size: 2.5em;
   margin-right: 1.5rem;
+`;
+
+const RegisterLink = styled(NavLink)`
+  font-family: 'Sail', cursive;
+  text-decoration: none;
+  font-size: 2.5em;
+  margin-left: 1.5rem;
 `;
