@@ -1,0 +1,32 @@
+
+
+.m-top { /** move form slightly further down screen from Login && Register buttons. **/
+    margin-top: 2.75rem;
+}
+
+.heading { /** controls the headings in the forms Login && Register **/
+    font-size: 1.75rem;
+    font-family: sans-serif;
+    padding-bottom: 0.75rem;
+    color:#d11aff;
+
+}
+
+.label { /** connects both Login && Register labels => both the username && password labels **/
+    margin-right: 10px;
+     color:#d11aff;
+}
+
+.input { /** inputs for Register && Login => both username && password inputs **/
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #fcd3ff; 
+}
+
+.btn { /** class for both Login & Register submit buttons **/
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fcd3ff;
+    color: #8d17a5;
+    font-size: 1.25rem;  
+}
