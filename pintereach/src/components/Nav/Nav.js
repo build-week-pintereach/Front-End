@@ -15,8 +15,6 @@ export default function(props) {
           <RegisterLink to="/register">Register</RegisterLink>
         </Nav>
       </LoginRegister>
-      <Route path="/login" exact render={props => <Login {...props} />} />
-      <Route path="/register" exact render={props => <Register {...props} />} />
     </div>
   );
 }

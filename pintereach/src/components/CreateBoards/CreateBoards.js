@@ -3,7 +3,24 @@ import axios from 'axios';
 import Board from '../Board/Board';
 
 class CreateBoards extends Component {
-  state = {};
+  state = {
+    articles: [],
+    filteredArticles: []
+  };
+
+  componentDidMount() {
+    axios
+      .get('https://build-week-pintereach.herokuapp.com/api/articles/')
+      .then(response => {
+        console.log(response);
+        this.setState({
+          articles: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   createBoard = () => {
     const { articles } = this.state;
@@ -12,7 +29,7 @@ class CreateBoards extends Component {
     );
 
     this.setState({
-      filteredArticles: filteredArticles
+      filteredArticles: articles
     });
   };
 
@@ -24,7 +41,7 @@ class CreateBoards extends Component {
     }
 
     console.log('filter', filteredArticles);
-    console.log('articles', this.state.articles);
+    console.log('articles', articles);
     return (
       <div>
         <button type="button" onClick={this.createBoard}>

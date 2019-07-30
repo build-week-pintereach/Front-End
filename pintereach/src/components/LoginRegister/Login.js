@@ -29,7 +29,9 @@ export default class Login extends Component {
         }
       })
       .then(response => {
-        console.log(response);
+        console.log(response.data);
+        localStorage.setItem('token', response.data.token);
+        this.props.history.push('/protected');
       })
       .catch(error => {
         console.log(error);
