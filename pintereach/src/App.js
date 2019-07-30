@@ -6,7 +6,7 @@ import { Route, Switch, NavLink } from 'react-router-dom';
 import './App.css';
 import Login from './components/LoginRegister/Login';
 import Register from './components/LoginRegister/Register';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateBoard from './components/PrivateBoard';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
         <Header />
         {token ? <br /> : <Nav />}
         {token ? (
-          <NavLink to="/protected" component={PrivateRoute}>
+          <NavLink to="/protected" component={PrivateBoard}>
             Create Board
           </NavLink>
         ) : null}
@@ -24,7 +24,7 @@ class App extends Component {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/protected" component={PrivateRoute} />
+          <Route path="/protected" component={PrivateBoard} />
         </Switch>
       </div>
     );
