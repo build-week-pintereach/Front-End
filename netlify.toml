@@ -1,0 +1,4 @@
+[build]
+  base    = "pintereach/"
+  publish = "pintereach/build"
+  command = "npm run build"
