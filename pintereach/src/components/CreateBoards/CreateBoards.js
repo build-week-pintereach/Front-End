@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Board from '../Board/Board';
+import Post from '../Post/Post';
 
 class CreateBoards extends Component {
   state = {
@@ -23,9 +23,9 @@ class CreateBoards extends Component {
 
   createBoard = () => {
     const { articles } = this.state;
-    const filteredArticles = articles.filter(
-      article => article.category_name === 'Game'
-    );
+    // const filteredArticles = articles.filter(
+    //   article => article.category_name === 'Game'
+    // );
 
     this.setState({
       filteredArticles: articles
@@ -47,7 +47,7 @@ class CreateBoards extends Component {
           +
         </button>
         {filteredArticles.map(article => {
-          return <Board article={article} key={article.id} />;
+          return <Post article={article} key={article.id} />;
         })}
       </div>
     );
