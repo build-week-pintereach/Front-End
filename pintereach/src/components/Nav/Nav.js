@@ -1,10 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import styled from 'styled-components';
-import { Route, NavLink } from 'react-router-dom';
-
-import Login from '../LoginRegister/Login';
-import Register from '../LoginRegister/Register';
+import { NavLink } from 'react-router-dom';
 
 export default function(props) {
   return (
