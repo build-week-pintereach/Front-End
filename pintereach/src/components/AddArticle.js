@@ -8,6 +8,8 @@ export default class AddArticle extends Component {
       title: '',
       summary: '',
       link: '',
+      imageLink: '',
+      category_name: '',
       article: []
     };
   }
@@ -19,11 +21,36 @@ export default class AddArticle extends Component {
     });
   };
 
-  render() {
+  submitArticle = e => {
+    e.preventDefault();
     const { title, summary, link } = this.state;
+    const payload = { title, summary, link };
+    const token = localStorage.getItem('token');
+
+    axios
+      .post(
+        'https://build-week-pintereach.herokuapp.com/api/articles/',
+        payload,
+        {
+          headers: {
+            Authorization: token
+          }
+        }
+      )
+      .then(response => {
+        console.log(response);
+        this.props.history.push('/protected');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  render() {
+    const { title, summary, link, imageLink, category_name } = this.state;
     return (
       <section>
-        <form>
+        <form onSubmit={this.submitArticle}>
           <label htmlFor="title-field" className="label">
             Title:{' '}
             <input
@@ -57,6 +84,30 @@ export default class AddArticle extends Component {
               name="link"
               placeholder="Link..."
               value={link}
+              onChange={this.changeHandler}
+            />
+          </label>
+          <label htmlFor="link-field" className="label">
+            Image Link:{' '}
+            <input
+              type="text"
+              id="link-field"
+              className="input"
+              name="imageLink"
+              placeholder="Image..."
+              value={imageLink}
+              onChange={this.changeHandler}
+            />
+          </label>
+          <label htmlFor="category-field" className="label">
+            Link:{' '}
+            <input
+              type="text"
+              id="link-field"
+              className="input"
+              name="category_name"
+              placeholder="category name..."
+              value={category_name}
               onChange={this.changeHandler}
             />
           </label>
