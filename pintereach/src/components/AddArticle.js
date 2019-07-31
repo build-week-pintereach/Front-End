@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class AddArticle extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       title: '',
       summary: '',
       link: '',
       imageLink: '',
-      category_name: '',
-      article: []
+      category_name: ''
     };
   }
   changeHandler = e => {
