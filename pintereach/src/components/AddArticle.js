@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class AddArticle extends Component {
   constructor(props) {
@@ -7,21 +8,16 @@ export default class AddArticle extends Component {
       title: '',
       summary: '',
       link: '',
-      article: [
-        {
-          id: 1,
-          title: 'Pokemon electronic game',
-          summary:
-            'Pokémon, electronic game series from Nintendo that debuted in Japan in 1995 and later became wildly popular in the United States. The series, originally produced for the company’s Game Boy line of handheld consoles, was introduced in 1998 to the United States with two titles, known to fans as Red and Blue.',
-          link: 'https://www.britannica.com/topic/Pokemon-electronic-game',
-          image:
-            'https://cdn.britannica.com/s:700x450/70/122270-004-0564DF2A.jpg',
-          user_id: 1,
-          category: 'Game'
-        }
-      ]
+      article: []
     };
   }
+  changeHandler = e => {
+    e.preventDefault();
+
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   render() {
     const { title, summary, link } = this.state;
