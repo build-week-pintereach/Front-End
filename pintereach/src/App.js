@@ -7,6 +7,7 @@ import './App.css';
 import Login from './components/LoginRegister/Login';
 import Register from './components/LoginRegister/Register';
 import PrivateBoard from './components/PrivateBoard';
+import PrivateAddArticle from './components/PrivateAddArticle';
 
 class App extends Component {
   render() {
@@ -16,15 +17,21 @@ class App extends Component {
         <Header />
         {token ? <br /> : <Nav />}
         {token ? (
-          <NavLink to="/protected" component={PrivateBoard}>
-            Create Board
-          </NavLink>
+          <div>
+            <NavLink to="/protected" component={PrivateBoard}>
+              Create Board
+            </NavLink>
+            <NavLink to="/addArticle" component={PrivateAddArticle}>
+              Add Article
+            </NavLink>
+          </div>
         ) : null}
 
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/protected" component={PrivateBoard} />
+          <Route path="/addArticle" component={PrivateAddArticle} />
         </Switch>
       </div>
     );
