@@ -4,8 +4,8 @@ import Post from '../Post/Post';
 
 class CreateBoards extends Component {
   state = {
-    articles: [],
-    filteredArticles: []
+    articles: []
+    //newArticles: []
   };
 
   componentDidMount() {
@@ -28,25 +28,26 @@ class CreateBoards extends Component {
     // );
 
     this.setState({
-      filteredArticles: articles
+      articles: articles
     });
   };
 
+  editPost = id => {};
+
   render() {
-    const { articles, filteredArticles } = this.state;
+    const { articles } = this.state;
 
     if (!articles) {
       return <div>Loading...</div>;
     }
 
-    console.log('filter', filteredArticles);
     console.log('articles', articles);
     return (
       <div>
         <button type="button" onClick={this.createBoard}>
           +
         </button>
-        {filteredArticles.map(article => {
+        {articles.map(article => {
           return <Post article={article} key={article.id} />;
         })}
       </div>
