@@ -8,7 +8,7 @@ export default class AddArticle extends Component {
       title: '',
       summary: '',
       link: '',
-      imageLink: '',
+      image: '',
       category_name: ''
     };
   }
@@ -22,8 +22,8 @@ export default class AddArticle extends Component {
 
   submitArticle = e => {
     e.preventDefault();
-    const { title, summary, link } = this.state;
-    const payload = { title, summary, link };
+    const { category_name, image, title, summary, link } = this.state;
+    const payload = { category_name, image, title, summary, link };
     const token = localStorage.getItem('token');
 
     axios
@@ -46,7 +46,7 @@ export default class AddArticle extends Component {
   };
 
   render() {
-    const { title, summary, link, imageLink, category_name } = this.state;
+    const { title, summary, link, image, category_name } = this.state;
     return (
       <section>
         <form onSubmit={this.submitArticle}>
@@ -92,9 +92,9 @@ export default class AddArticle extends Component {
               type="text"
               id="link-field"
               className="input"
-              name="imageLink"
+              name="image"
               placeholder="Image..."
-              value={imageLink}
+              value={image}
               onChange={this.changeHandler}
             />
           </label>
