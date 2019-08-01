@@ -42,7 +42,6 @@ class CreateBoards extends Component {
       return <div>Loading...</div>;
     }
 
-    console.log('articles', articles);
     return (
       <div>
         <button type="button" onClick={this.createBoard}>
