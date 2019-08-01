@@ -1,5 +1,5 @@
 import React from 'react';
-import './Nav.css';
+// import './Nav.css';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -34,7 +34,10 @@ const LoginLink = styled(NavLink)`
   font-size: 2.5em;
   margin-right: 1.5rem;
   color: #d11aff;
-  :hover {
+  &:hover {
+    color: #8d17a5;
+  }
+  &.active {
     color: #8d17a5;
   }
 `;
