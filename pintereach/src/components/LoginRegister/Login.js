@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './LoginRegister.css';
-
+// import './LoginRegister.css';
+import styled from 'styled-components';
 export default class Login extends Component {
   state = {
     username: '',
@@ -41,45 +41,87 @@ export default class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <section className="m-top user-login">
-        <h2 className="heading">User Login</h2>
+      <UserLogin>
+        <UserHeading>User Login</UserHeading>
 
         <form onSubmit={this.loginUser}>
-          <div className="username-field">
-            <label htmlFor="username-login-field" className="label">
+          <div>
+            <UsernameLabel htmlFor="username-login-field">
               User name:{' '}
-            </label>
-            <input
-              type="text"
-              id="username-login-field"
-              className="input"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={this.changeHandler}
-            />
+              <UsernameInput
+                type="text"
+                id="username-login-field"
+                name="username"
+                placeholder="Username"
+                value={username}
+                onChange={this.changeHandler}
+              />
+            </UsernameLabel>
           </div>
           <br />
           <div className="password-field">
-            <label htmlFor="password-login-field" className="label">
+            <PasswordLabel htmlFor="password-login-field" className="label">
               Password:{' '}
-            </label>
-            <input
-              type="password"
-              id="password-login-field"
-              className="input"
-              name="password"
-              placeholder="Username"
-              value={password}
-              onChange={this.changeHandler}
-            />
+              <PasswordInput
+                type="password"
+                id="password-login-field"
+                name="password"
+                placeholder="Username"
+                value={password}
+                onChange={this.changeHandler}
+              />
+            </PasswordLabel>
           </div>
           <br />
-          <button type="submit" className="btn login-button">
-            Login
-          </button>
+          <LoginButton type="submit">Login</LoginButton>
         </form>
-      </section>
+      </UserLogin>
     );
   }
 }
+
+const UserLogin = styled.section`
+  margin-top: 2.75rem;
+`;
+
+const UserHeading = styled.h2`
+  font-size: 1.75rem;
+  font-family: sans-serif;
+  padding-bottom: 0.75rem;
+  color: #d11aff;
+`;
+
+const UsernameLabel = styled.label`
+  margin-right: 15px;
+  color: #d11aff;
+`;
+
+const UsernameInput = styled.input`
+  padding: 5px;
+  border-radius: 5px;
+  border-color: #fcd3ff;
+`;
+
+const PasswordLabel = styled.label`
+  margin-right: 10px;
+  color: #d11aff;
+`;
+
+const PasswordInput = styled.input`
+  padding: 5px;
+  border-radius: 5px;
+  border-color: #fcd3ff;
+`;
+
+const LoginButton = styled.button`
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fcd3ff;
+  color: #8d17a5;
+  font-size: 1.25rem;
+
+  &:hover {
+    background-color: #8d17a5;
+    color: #fcd3ff;
+  }
+`;
