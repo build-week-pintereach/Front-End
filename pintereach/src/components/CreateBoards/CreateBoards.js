@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Post from '../Post/Post';
+import styled from 'styled-components';
 
 class CreateBoards extends Component {
   state = {
@@ -41,17 +42,24 @@ class CreateBoards extends Component {
       return <div>Loading...</div>;
     }
 
-    console.log('articles', articles);
     return (
       <div>
         <button type="button" onClick={this.createBoard}>
           +
         </button>
+        <ArticleSection>
         {articles.map(article => {
           return <Post article={article} key={article.id} />;
         })}
+        </ArticleSection>
       </div>
     );
   }
 }
 export default CreateBoards;
+
+const ArticleSection = styled.div`
+display: flex;
+margin-top: 10px;
+
+`;
