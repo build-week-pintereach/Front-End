@@ -48,7 +48,10 @@ const RegisterLink = styled(NavLink)`
   font-size: 2.5em;
   margin-left: 1.5rem;
   color: #d11aff;
-  :hover {
+  &:hover {
+    color: #8d17a5;
+  }
+  &.active {
     color: #8d17a5;
   }
 `;
