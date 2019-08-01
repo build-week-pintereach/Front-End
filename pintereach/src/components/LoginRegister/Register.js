@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './LoginRegister.css';
+import styled from 'styled-components';
 
 class Register extends Component {
   constructor() {
@@ -44,50 +44,91 @@ class Register extends Component {
     const { username, password } = this.state;
 
     return (
-      <section className="m-top register-user">
-        <h2 className="heading">Register User</h2>
+      <RegisterUser>
+        <RegisterHeading>Register User</RegisterHeading>
         <form onSubmit={this.submitUser} className="register-user-form">
-          <div className="username-section">
-            <label htmlFor="username-field" className="label">
+          <div>
+            <UsernameLabel htmlFor="username-field">
               User name:{' '}
-            </label>
-
-            <input
-              type="text"
-              id="username-field"
-              className="input"
-              name="username"
-              value={username}
-              onChange={this.changeHandler}
-              placeholder="Enter a user name..."
-              // required
-            />
+              <UsernameInput
+                type="text"
+                id="username-field"
+                name="username"
+                value={username}
+                onChange={this.changeHandler}
+                placeholder="Enter a user name..."
+                required
+              />
+            </UsernameLabel>
           </div>
 
           <br />
 
-          <div className="password">
-            <label htmlFor="password-field" className="label">
+          <div>
+            <PasswordLabel htmlFor="password-field">
               Password:{' '}
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password-field"
-              className="input"
-              value={password}
-              onChange={this.changeHandler}
-              placeholder="Please enter a password..."
-              // required
-            />
+              <PasswordInput
+                type="password"
+                name="password"
+                id="password-field"
+                value={password}
+                onChange={this.changeHandler}
+                placeholder="Please enter a password..."
+                required
+              />
+            </PasswordLabel>
           </div>
           <br />
-          <button type="submit" className="btn register-button">
-            Register User
-          </button>
+          <RegisterButton type="submit">Register User</RegisterButton>
         </form>
-      </section>
+      </RegisterUser>
     );
   }
 }
 export default Register;
+
+const RegisterUser = styled.section`
+  margin-top: 2.75rem;
+`;
+
+const RegisterHeading = styled.h2`
+  font-size: 1.75rem;
+  font-family: sans-serif;
+  padding-bottom: 0.75rem;
+  color: #d11aff;
+`;
+
+const UsernameLabel = styled.label`
+  margin-right: 15px;
+  color: #d11aff;
+`;
+
+const UsernameInput = styled.input`
+  padding: 5px;
+  border-radius: 5px;
+  border-color: #fcd3ff;
+`;
+
+const PasswordLabel = styled.label`
+  margin-right: 10px;
+  color: #d11aff;
+`;
+
+const PasswordInput = styled.input`
+  padding: 5px;
+  border-radius: 5px;
+  border-color: #fcd3ff;
+`;
+
+const RegisterButton = styled.button`
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fcd3ff;
+  color: #8d17a5;
+  font-size: 1.25rem;
+
+  &:hover {
+    background-color: #8d17a5;
+    color: #fcd3ff;
+  }
+`;
