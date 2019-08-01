@@ -1,10 +1,7 @@
 import React from 'react';
-import './Nav.css';
+// import './Nav.css';
 import styled from 'styled-components';
-import { Route, NavLink } from 'react-router-dom';
-
-import Login from '../LoginRegister/Login';
-import Register from '../LoginRegister/Register';
+import { NavLink } from 'react-router-dom';
 
 export default function(props) {
   return (
@@ -37,7 +34,10 @@ const LoginLink = styled(NavLink)`
   font-size: 2.5em;
   margin-right: 1.5rem;
   color: #d11aff;
-  :hover {
+  &:hover {
+    color: #8d17a5;
+  }
+  &.active {
     color: #8d17a5;
   }
 `;
@@ -48,7 +48,10 @@ const RegisterLink = styled(NavLink)`
   font-size: 2.5em;
   margin-left: 1.5rem;
   color: #d11aff;
-  :hover {
+  &:hover {
+    color: #8d17a5;
+  }
+  &.active {
     color: #8d17a5;
   }
 `;
