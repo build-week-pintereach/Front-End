@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import { Route, Switch, NavLink } from 'react-router-dom';
-
 import './App.css';
 import Login from './components/LoginRegister/Login';
 import Register from './components/LoginRegister/Register';
 import PrivateBoard from './components/PrivateBoard';
 import PrivateAddArticle from './components/PrivateAddArticle';
 import styled from 'styled-components';
-import CreateBoards from './components/CreateBoards/CreateBoards';
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +37,7 @@ class App extends Component {
                 <CreateBoard type="button">Create Board</CreateBoard>
               </NavLink>
               <NavLink to="/addArticle" component={PrivateAddArticle}>
-                Add Article
+                <Article type="button">Add Article</Article>
               </NavLink>
             </NavLinks>
           </NavLinkSection>
@@ -73,14 +71,35 @@ const NavLinks = styled.div`
 `;
 
 const CreateBoard = styled(NavLink)`
-  background-color: pink;
-  font-family: 'Sail', cursive;
+  background-color: #fcd3ff;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: cursive;
   text-decoration: none;
   font-size: 2.5em;
   margin-right: 1.5rem;
   color: #d11aff;
   &:hover {
+    background-color: #d11aff;
+    color: #fcd3ff;
+  }
+  &.active {
     color: #8d17a5;
+  }
+`;
+
+const Article = styled(NavLink)`
+  background-color: #fcd3ff;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: cursive;
+  text-decoration: none;
+  font-size: 2.5em;
+  margin-right: 1.5rem;
+  color: #d11aff;
+  &:hover {
+    background-color: #d11aff;
+    color: #fcd3ff;
   }
   &.active {
     color: #8d17a5;
