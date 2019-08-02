@@ -26,7 +26,6 @@ export default class Login extends Component {
         password
       })
       .then(response => {
-        console.log(response.data);
         const token = response.data.token;
         localStorage.setItem('token', token);
         this.props.history.push('/protected');
