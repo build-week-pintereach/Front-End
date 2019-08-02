@@ -10,13 +10,27 @@ import PrivateBoard from './components/PrivateBoard';
 import PrivateAddArticle from './components/PrivateAddArticle';
 
 class App extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: ''
+    };
+  }
+
+  componentWillMount() {
     const token = localStorage.getItem('token');
+    this.setState({
+      token: token
+    });
+  }
+
+  render() {
+    //const token = localStorage.getItem('token');
+    console.log('token', this.state.token);
     return (
       <div className="App">
         <Header />
-        {token ? <br /> : <Nav />}
-        {token ? (
+        {this.state.token ? (
           <div>
             <NavLink to="/protected" component={PrivateBoard}>
               Create Board
@@ -25,7 +39,9 @@ class App extends Component {
               Add Article
             </NavLink>
           </div>
-        ) : null}
+        ) : (
+          <Nav />
+        )}
 
         <Switch>
           <Route path="/login" component={Login} />
