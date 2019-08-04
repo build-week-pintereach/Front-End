@@ -33,12 +33,16 @@ class App extends Component {
         {this.state.token ? (
           <NavLinkSection>
             <NavLinks>
-              <NavLink to="/protected" component={PrivateBoard}>
-                <CreateBoard type="button">Create Board</CreateBoard>
-              </NavLink>
-              <NavLink to="/addArticle" component={PrivateAddArticle}>
-                <Article type="button">Add Article</Article>
-              </NavLink>
+            <CreateBoardNav type="button">
+                <CreateBoardLink to="/protected" component={PrivateBoard}>
+                  Create Board
+                </CreateBoardLink>
+              </CreateBoardNav>
+              <ArticleNav type="button">
+                <ArticleNavLink to="/addArticle" component={PrivateAddArticle}>
+                  Add Article
+                </ArticleNavLink>
+              </ArticleNav>
             </NavLinks>
           </NavLinkSection>
         ) : (
@@ -70,15 +74,36 @@ const NavLinks = styled.div`
   width: 45%;
 `;
 
-const CreateBoard = styled(NavLink)`
+const CreateBoardNav = styled.button`
   background-color: #fcd3ff;
-  padding: 15px;
-  border-radius: 5px;
-  font-family: cursive;
-  text-decoration: none;
-  font-size: 2.5em;
-  margin-right: 1.5rem;
   color: #d11aff;
+  border-radius: 5px;
+  margin-right: 1.5rem;
+  padding: 15px;
+  &:hover {
+    background-color: #d11aff;
+    color: #fcd3ff;
+  }
+  &.active {
+    color: #8d17a5;
+  }
+  
+`;
+
+const CreateBoardLink = styled(NavLink)`
+  font-family: 'Sail', cursive;
+  font-size: 2.5em;
+  text-decoration: none;
+ 
+`;
+
+const ArticleNav = styled.button`
+  background-color: #fcd3ff;
+  border-radius: 5px;
+  color: #d11aff;
+  margin-right: 1.5rem;
+  padding: 15px;
+  text-decoration: none;
   &:hover {
     background-color: #d11aff;
     color: #fcd3ff;
@@ -88,20 +113,8 @@ const CreateBoard = styled(NavLink)`
   }
 `;
 
-const Article = styled(NavLink)`
-  background-color: #fcd3ff;
-  padding: 15px;
-  border-radius: 5px;
-  font-family: cursive;
-  text-decoration: none;
-  font-size: 2.5em;
-  margin-right: 1.5rem;
-  color: #d11aff;
-  &:hover {
-    background-color: #d11aff;
-    color: #fcd3ff;
-  }
-  &.active {
-    color: #8d17a5;
-  }
+const ArticleNavLink = styled(NavLink)`
+font-family: 'Sail', cursive;
+font-size: 2.5em;
+text-decoration: none;
 `;
