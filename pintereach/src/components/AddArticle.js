@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 export default class AddArticle extends Component {
   constructor() {
@@ -48,7 +49,7 @@ export default class AddArticle extends Component {
   render() {
     const { title, summary, link, image, category_name } = this.state;
     return (
-      <section>
+      <AddArticleSection>
         <form onSubmit={this.submitArticle}>
           <label htmlFor="title-field" className="label">
             Title:{' '}
@@ -112,7 +113,11 @@ export default class AddArticle extends Component {
           </label>
           <button type="submit">Add Article</button>
         </form>
-      </section>
+      </AddArticleSection>
     );
   }
 }
+
+const AddArticleSection = styled.section`
+  margin-top: 1.5rem;
+  `;
